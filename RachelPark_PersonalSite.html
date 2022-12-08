@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Prompt", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("images/home_bg.JPG");
+  min-height: 80%;
+}
+
+.menu {
+  display: none;
+}
+
+.w3-hover-opacity {cursor: pointer;}
+</style>
+</head>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#involvements" class="w3-button w3-block w3-black">INVOLVEMENTS</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#contact" class="w3-button w3-block w3-black">CONTACT</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">Undergraduate Student at Georgia Tech</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-tag">2nd Year Computational Media Major</span>
+  </div>
+</header>
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT RACHEL PARK</span></h5>
+    <p>Rachel Park is a current second-year undergraduate student studying Computational Media at the Georgia Institute of Technology. She has always had a love for art and design, but developed her passion for coding quite recently
+        during her AP Computer Science Principles course in her sophomore year of high school. Since then, she knew she wanted to be involved in a career that combined both of these passions. Her dream job is to become a UI/UX designer
+        for Apple in the future! For now, she is still building upon her basic understanding of website design.
+    </p>
+    <p>Through this website, you will be able to see Rachel's involvements that have led her to where she is today - both as a person and as a student. Head over to "INVOLVEMENTS" in the menu to learn more!</p>
+    <img src="images/aboutGT.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+  </div>
+</div>
+
+<!-- Involvements Container -->
+<div class="w3-content w3-container w3-padding-64" id="involvements">
+  <div class="w3-content" style="max-width:1000px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">RACHEL'S INVOLVEMENTS</span></h5>
+    <p class="w3-center"><em>Here are some of Rachel's involvements.<br> Click on the images to learn more.</em></p><br>
+
+    <div class="w3-row-padding w3-center">
+        <div class="w3-col m3">
+          <img src="images/rachelTSA.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Rachel participated in her school's Technology Student Association as a team leader for the webmaster event!">
+        </div>
+    
+        <div class="w3-col m3">
+          <img src="images/rachelGSLT.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Rachel wanted to make a positive change in her school so she attended monthly leadership lessons that she could share with her peers.">
+        </div>
+    
+        <div class="w3-col m3">
+          <img src="images/rachelGrad.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Rachel graduated from the Gwinnett School of Mathematics, Science, and Technology in 2021.">
+        </div>
+    
+        <div class="w3-col m3">
+          <img src="images/rachelDPHIL.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="In college, Rachel became a part of an Asian interest sorority known as Delta Phi Lamdba Sorority, Inc.">
+        </div>
+  
+    </div>
+  </div>
+</div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-large w3-display-topright">x</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="contact" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">CONTACT</span></h5>
+    <p>Contact me for any inquiries!</p>
+    <p>EMAIL: rpark62@gatech.edu</p>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>LMC 2700 Website Project: Made with the help of w3schools.</p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
